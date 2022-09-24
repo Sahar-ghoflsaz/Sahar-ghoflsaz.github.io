@@ -1,15 +1,15 @@
 body{
-  margin:0;
+  margin: 0;
   padding=: 0;
   background: url(back1.jpg) no-reapeat;
   background-size: cover;
 }
 .box{
-  width: 40pxx;
+  width: 40px;
   background: rgba(0,0,0,0.4);
   padding: 40px;
   text-align: center;
-  margin:auto;
+  margin: auto;
   margin-top: 5%;
   color: white;
   font-family:'Century Gothic', sans-serif;
