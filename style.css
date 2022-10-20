@@ -5,5 +5,25 @@ body{
   background: no-repeat;
   background-size: cover;
 }
+.box{
+  width:px;
+  background: rgba(0,0,0,0.4);
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  amrgin-top:5%;
+  color: white;
+  font-family: sans-serif;
+}
+.box-img{
+  border-radius:50%;
+  width: 200px;
+  height: 200px;
+  
+  .box h1{
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight:100
+  }
 
-    
+  
