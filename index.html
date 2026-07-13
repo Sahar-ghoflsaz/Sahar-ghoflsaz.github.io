@@ -1,47 +1,255 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sahar Ghoflsaz — PhD student in Computer Science at UC Riverside, researching Computer Architecture, AI, and Security.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Sahar Ghoflsaz</title>
+    <title>Sahar Ghoflsaz — Researcher &amp; PhD Student</title>
 </head>
 <body>
-   <div class="box"> 
-       <img src="pro.jpg" alt="" class"box-img" style="width:300px;height:300px;border-radius: 50%;">
-       <h1>Sahar Ghoflsaz</h1>
-       <h5> PhD student at University of California, Riverside</h5>
-       <p>I am a Ph.D. student in Computer Science at the University of California, Riverside, advising by Prof. Elaheh Sadredini. I am working on the intersection of Computer Architecture, AI and Security.</p>
-       <h1> News </h1> 
-       <ul>
-            <li>May 2026: Our paper was accepted to <a href="http://www.icccn.org/">ICCCN 2026!</a> --- Track W6</li>
-            <li>May 2026: Invited to present our research at <a href="https://ucrswe.org/"> SWE@UCR workshop!</a></li>
-            <li>Aug 2025: Presented our paper at <a href="https://www.usenix.org/conference/usenixsecurity25">USENIX Security 2025!</a> [<a href="https://www.youtube.com/watch?v=cGhyiYQ8QLU">Video</a>]</li>
-            <li>Jan 2025: Our paper was accepted to <a href="https://www.usenix.org/conference/usenixsecurity25">USENIX Security 2025!</a></li>    
-            <li>Nov 2024: Invited to present a poster at <a href="https://www.colorado.edu/conference/cwwmca/">CWIDCA 2024!</a></li>
-            <li>Nov 2023: Invited to be Graduate Student Panelist at <a href="https://sites.google.com/ucr.edu/ieee-inlandempire-dsw">IEEE Inland Empire DSW!</a></li>
-            <li>Sep 2022: Started my PhD at UCR!</li>
-       </ul>
-       <h1> Publications </h1> 
-       <ul>
-            <li>
-                <article>
-                    [C1]. <color=blue>Sahar Ghoflsaz Ghinani,</color> Jingyao Zhang, and Elaheh Sadredini. 2025. Enabling low-cost secure computing on untrusted in-memory architectures. In Proceedings of the 34th USENIX Conference on Security Symposium (SEC '25). USENIX Association, USA, Article 91, 1749–1767.
-              
-                </article>
-            </li>
-       </ul>
 
-       <h1> </h1>
-       <div id="links"> 
-        <ul>
-                <li><a href="https://www.facebook.com/sahar.ghoflsaz"<i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-                <li><a href="https://mobile.twitter.com/sahar1gh1"<i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                <li><a href="https://github.com/Sahar-ghoflsaz"<i class="fa fa-github-square" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/sahar-ghoflsaz/"<i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+    <!-- Animated Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">S<span class="accent-dot">.</span>GG</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <h5>Email: sghof001 [at] ucr. edu</h5>
-    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-image-wrapper">
+                <div class="hero-image-ring"></div>
+                <img src="pro.jpg" alt="Sahar Ghoflsaz" class="hero-image" id="hero-image">
+            </div>
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Sahar Ghoflsaz</h1>
+                <p class="hero-pronunciation"><i class="fa-solid fa-volume-high"></i> Pronounced: <span class="phonetic">/sæhær/</span></p>
+                <div class="hero-tagline-container">
+                    <span class="hero-tagline-prefix">PhD Student</span>
+                    <span class="hero-tagline-separator">·</span>
+                    <span class="hero-tagline-suffix" id="typewriter"></span>
+                    <span class="cursor" id="cursor">|</span>
+                </div>
+                <p class="hero-affiliation">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    University of California, Riverside
+                </p>
+                <div class="hero-cta">
+                    <a href="#publications" class="btn btn-primary">View Publications</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text glass-card">
+                    <p>
+                        I am a <strong>Ph.D. student in Computer Science</strong> at the 
+                        University of California, Riverside, advised by 
+                        <a href="#" class="inline-link">Prof. Elaheh Sadredini</a>. 
+                        My research lies at the intersection of 
+                        <strong>Computer Architecture</strong>, 
+                        <strong>Artificial Intelligence</strong>, and 
+                        <strong>Security</strong>.
+                    </p>
+                    <p>
+                        I am passionate about enabling secure and efficient computing 
+                        on emerging hardware platforms, with a focus on in-memory 
+                        computing architectures.
+                    </p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card glass-card">
+                        <span class="stat-number" data-count="1">0</span>
+                        <span class="stat-label">Publications</span>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Research Areas</span>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-number" data-count="2022">0</span>
+                        <span class="stat-label">PhD Started</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">Latest News</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-year="2026">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">May 2026</span>
+                        <p>Our paper was accepted to <a href="http://www.icccn.org/" class="inline-link" rel="noopener noreferrer">ICCCN 2026</a> — Track W6</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2026">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">May 2026</span>
+                        <p>Invited to present our research at <a href="https://ucrswe.org/" class="inline-link" rel="noopener noreferrer">SWE@UCR workshop</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Aug 2025</span>
+                        <p>Presented our paper at <a href="https://www.usenix.org/conference/usenixsecurity25" class="inline-link" rel="noopener noreferrer">USENIX Security 2025</a> [<a href="https://www.youtube.com/watch?v=cGhyiYQ8QLU" class="inline-link" rel="noopener noreferrer">Video</a>]</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Jan 2025</span>
+                        <p>Our paper was accepted to <a href="https://www.usenix.org/conference/usenixsecurity25" class="inline-link" rel="noopener noreferrer">USENIX Security 2025</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Nov 2024</span>
+                        <p>Invited to present a poster at <a href="https://www.colorado.edu/conference/cwwmca/" class="inline-link" rel="noopener noreferrer">CWIDCA 2024</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2023">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Nov 2023</span>
+                        <p>Invited to be Graduate Student Panelist at <a href="https://sites.google.com/ucr.edu/ieee-inlandempire-dsw" class="inline-link" rel="noopener noreferrer">IEEE Inland Empire DSW</a></p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">Sep 2022</span>
+                        <p>Started my PhD at UCR! 🎓</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">Publications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="publication-list">
+                <article class="publication-card glass-card">
+                    <div class="pub-badge">
+                        <span class="pub-venue">USENIX SEC '25</span>
+                    </div>
+                    <h3 class="pub-title">Enabling Low-Cost Secure Computing on Untrusted In-Memory Architectures</h3>
+                    <p class="pub-authors">
+                        <span class="pub-author-highlight">Sahar Ghoflsaz Ghinani</span>, 
+                        Jingyao Zhang, and Elaheh Sadredini
+                    </p>
+                    <p class="pub-details">
+                        Proceedings of the 34th USENIX Conference on Security Symposium (SEC '25). 
+                        USENIX Association, USA, Article 91, 1749–1767.
+                    </p>
+                    <div class="pub-tags">
+                        <span class="pub-tag">Computer Architecture</span>
+                        <span class="pub-tag">Security</span>
+                        <span class="pub-tag">In-Memory Computing</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info glass-card">
+                    <p class="contact-text">
+                        I'm always open to discussing research collaborations, 
+                        academic opportunities, or just having a chat about 
+                        computer architecture and security.
+                    </p>
+                    <div class="contact-email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>sghof001 [at] ucr.edu</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Sahar-ghoflsaz" class="social-link" aria-label="GitHub" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sahar-ghoflsaz/" class="social-link" aria-label="LinkedIn" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-container">
+            <p class="footer-copyright">&copy; 2026 Sahar Ghoflsaz. All rights reserved.</p>
+            <p class="footer-credit">
+                Designed &amp; crafted with <i class="fa-solid fa-heart heart-icon"></i> by 
+                <span class="credit-name">Antigravity AI</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
-
