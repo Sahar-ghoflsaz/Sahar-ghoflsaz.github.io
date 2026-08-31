@@ -229,7 +229,7 @@
 
     function animateCounter(el) {
         const target = parseInt(el.getAttribute('data-count'), 10);
-        const duration = 1500;
+        const duration = target <= 3 ? 450 : 1500;
         const startTime = performance.now();
 
         function update(currentTime) {
